@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/NudeLocker.iml" filepath="$PROJECT_DIR$/NudeLocker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Jlib/jlib/jlib.iml" filepath="$PROJECT_DIR$/../Jlib/jlib/jlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nudelocker/nudelocker.iml" filepath="$PROJECT_DIR$/nudelocker/nudelocker.iml" />
+    </modules>
+  </component>
+</project>

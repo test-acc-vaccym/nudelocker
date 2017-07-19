@@ -1,0 +1,3 @@
+include ':jlib'
+project(':jlib').projectDir = new File('../Jlib/jlib')
+include ':nudelocker'
