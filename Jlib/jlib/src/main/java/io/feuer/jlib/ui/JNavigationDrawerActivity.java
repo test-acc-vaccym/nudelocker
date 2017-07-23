@@ -65,8 +65,9 @@ public abstract class JNavigationDrawerActivity extends AppCompatActivity implem
     //endregion
 
     //region Lifecycle
+
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lay_act_navigation_drawer);
         tbMain = (Toolbar) findViewById(R.id.tbMain);
@@ -83,7 +84,7 @@ public abstract class JNavigationDrawerActivity extends AppCompatActivity implem
             nvDrawer.inflateMenu(getNavigationDrawerMenu());
             nvDrawer.setNavigationItemSelectedListener(this);
 
-            onJCreate(savedInstanceState, persistentState);
+            onJCreate(savedInstanceState);
         } else {
             JLog.wtf(this, "Something went horribly wrong...");
         }
@@ -146,10 +147,9 @@ public abstract class JNavigationDrawerActivity extends AppCompatActivity implem
      * Wird im onCreate-Ereigniss nach der Initialisierung des Drawers ausgeführt.
      * Kann für weitere Initialisierungen überschireben werden.
      * @param savedInstanceState savedInstanceState
-     * @param persistentState persistentState
      */
     @SuppressWarnings("UnusedParameters")
-    public void onJCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
+    public void onJCreate(@Nullable Bundle savedInstanceState) {
         //nothing to do...
     }
     //endregion
