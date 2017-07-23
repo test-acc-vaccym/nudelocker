@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Nude Locker</string>
+    <string name="image">Image</string>
+    <string name="title">Titel</string>
 </resources>

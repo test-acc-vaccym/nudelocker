@@ -1,7 +1,6 @@
 package io.feuer.jlib.ui;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.MenuRes;
@@ -75,7 +74,7 @@ public abstract class JNavigationDrawerActivity extends AppCompatActivity implem
         dlMain = (DrawerLayout) findViewById(R.id.dlMain);
         fab = (FloatingActionButton) findViewById(R.id.fabImport);
 
-        if(tbMain != null && nvDrawer != null && dlMain != null && fab != null) {
+        if (tbMain != null && nvDrawer != null && dlMain != null && fab != null) {
             setSupportActionBar(tbMain);
             abToggle = new ActionBarDrawerToggle(this, dlMain, tbMain, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
             dlMain.addDrawerListener(abToggle);
@@ -114,8 +113,10 @@ public abstract class JNavigationDrawerActivity extends AppCompatActivity implem
     //endregion
 
     //region Hilfsmethoden
+
     /**
      * Gibt den FAB zurueck.
+     *
      * @return FloatingActionButton oder null
      */
     protected final
@@ -126,6 +127,7 @@ public abstract class JNavigationDrawerActivity extends AppCompatActivity implem
 
     /**
      * Gibt das Content-FrameLayout zurueck.
+     *
      * @return Id-Resource
      */
     @IdRes
@@ -135,10 +137,11 @@ public abstract class JNavigationDrawerActivity extends AppCompatActivity implem
 
     /**
      * Setzt ein Fragment in das Content-FrameLayout
+     *
      * @param fragment Fragment
      */
     protected final void setFragment(final @Nullable Fragment fragment) {
-        if(fragment != null) {
+        if (fragment != null) {
             getSupportFragmentManager().beginTransaction().replace(getContentPlaceholderId(), fragment).commit();
         }
     }
@@ -146,6 +149,7 @@ public abstract class JNavigationDrawerActivity extends AppCompatActivity implem
     /**
      * Wird im onCreate-Ereigniss nach der Initialisierung des Drawers ausgeführt.
      * Kann für weitere Initialisierungen überschireben werden.
+     *
      * @param savedInstanceState savedInstanceState
      */
     @SuppressWarnings("UnusedParameters")
@@ -155,8 +159,10 @@ public abstract class JNavigationDrawerActivity extends AppCompatActivity implem
     //endregion
 
     //region Abstrakte Methoden
+
     /**
      * Ein Navigations-Drawer-Item wurde ausgewählt.
+     *
      * @param item Menuitem
      * @return true to display the item as the selected item
      */
