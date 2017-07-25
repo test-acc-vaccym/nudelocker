@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import io.feuer.nudelocker.R;
 import io.feuer.nudelocker.bll.BrowserItem;
@@ -23,16 +24,14 @@ public class BrowserAdapter extends RecyclerView.Adapter<BrowserAdapter.ItemHold
     /**
      * Liste der Browser-Elemente
      */
-    private
-    @NonNull
-    ArrayList<BrowserItem> items;
+    private @NonNull List<BrowserItem> items;
 
     /**
      * Konsturktor
      *
      * @param items Items
      */
-    public BrowserAdapter(final @NonNull ArrayList<BrowserItem> items) {
+    public BrowserAdapter(final @NonNull List<BrowserItem> items) {
         this.items = items;
     }
 
@@ -53,6 +52,9 @@ public class BrowserAdapter extends RecyclerView.Adapter<BrowserAdapter.ItemHold
         return items.size();
     }
 
+    /**
+     * {@link android.support.v7.widget.RecyclerView.ViewHolder}
+     */
     static class ItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         /**
