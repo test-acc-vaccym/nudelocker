@@ -6,7 +6,6 @@ import android.support.annotation.LayoutRes;
 import android.support.annotation.MenuRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
@@ -30,37 +29,23 @@ public abstract class JNavigationDrawerActivity extends AppCompatActivity implem
     /**
      * Toolbar
      */
-    private
-    @Nullable
-    Toolbar tbMain;
+    private @Nullable Toolbar tbMain;
 
-    /**
-     * Import FAB
-     */
-    private
-    @Nullable
-    FloatingActionButton fab;
 
     /**
      * Main Layout
      */
-    private
-    @Nullable
-    DrawerLayout dlMain;
+    private @Nullable DrawerLayout dlMain;
 
     /**
      * DrawerToggle
      */
-    private
-    @Nullable
-    ActionBarDrawerToggle abToggle;
+    private @Nullable ActionBarDrawerToggle abToggle;
 
     /**
      * Der Drawer
      */
-    private
-    @Nullable
-    NavigationView nvDrawer;
+    private @Nullable NavigationView nvDrawer;
     //endregion
 
     //region Lifecycle
@@ -72,9 +57,8 @@ public abstract class JNavigationDrawerActivity extends AppCompatActivity implem
         tbMain = (Toolbar) findViewById(R.id.tbMain);
         nvDrawer = (NavigationView) findViewById(R.id.nvDrawer);
         dlMain = (DrawerLayout) findViewById(R.id.dlMain);
-        fab = (FloatingActionButton) findViewById(R.id.fabImport);
 
-        if (tbMain != null && nvDrawer != null && dlMain != null && fab != null) {
+        if (tbMain != null && nvDrawer != null && dlMain != null) {
             setSupportActionBar(tbMain);
             abToggle = new ActionBarDrawerToggle(this, dlMain, tbMain, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
             dlMain.addDrawerListener(abToggle);
@@ -113,17 +97,6 @@ public abstract class JNavigationDrawerActivity extends AppCompatActivity implem
     //endregion
 
     //region Hilfsmethoden
-
-    /**
-     * Gibt den FAB zurueck.
-     *
-     * @return FloatingActionButton oder null
-     */
-    protected final
-    @Nullable
-    FloatingActionButton getFloatingActionButton() {
-        return fab;
-    }
 
     /**
      * Gibt das Content-FrameLayout zurueck.
