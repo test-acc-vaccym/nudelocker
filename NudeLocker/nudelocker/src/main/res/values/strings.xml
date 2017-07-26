@@ -2,4 +2,6 @@
     <string name="app_name">Nude Locker</string>
     <string name="image">Image</string>
     <string name="title">Titel</string>
+    <string name="create_folder">Create Folder</string>
+    <string name="import_image">Import Image</string>
 </resources>

@@ -25,24 +25,21 @@
         android:paddingLeft="10dp"
         fab:menu_labels_ellipsize="end"
         fab:menu_labels_singleLine="true"
-        fab:menu_backgroundColor="#ccffffff"
-        fab:menu_fab_label="Menu label">
+        fab:menu_backgroundColor="#ccffffff" >
 
         <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/fabAdd"
+            android:id="@+id/fabCreateFolder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_dialog_email"
-            fab:fab_size="mini"
-            fab:fab_label="Disabled" />
+            android:src="@android:drawable/ic_input_get"
+            fab:fab_label="@string/create_folder" />
 
         <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/fabImport"
+            android:id="@+id/fabImportImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_dialog_email"
-            fab:fab_size="mini"
-            fab:fab_label="Remove button" />
+            android:src="@android:drawable/ic_menu_gallery"
+            fab:fab_label="@string/import_image" />
 
     </com.github.clans.fab.FloatingActionMenu>
 
