@@ -24,15 +24,13 @@ public class BrowserAdapter extends RecyclerView.Adapter<BrowserAdapter.ItemHold
     /**
      * Liste der Browser-Elemente
      */
-    private @NonNull List<BrowserItem> items;
+    private @Nullable List<BrowserItem> items;
 
     /**
-     * Konsturktor
-     *
-     * @param items Items
+     * Konstruktor
      */
-    public BrowserAdapter(final @NonNull List<BrowserItem> items) {
-        this.items = items;
+    public BrowserAdapter() {
+        //
     }
 
     @Override
@@ -44,12 +42,17 @@ public class BrowserAdapter extends RecyclerView.Adapter<BrowserAdapter.ItemHold
 
     @Override
     public void onBindViewHolder(ItemHolder holder, int position) {
-        holder.bindItem(items.get(position));
+        if(items != null) {
+            holder.bindItem(items.get(position));
+        }
     }
 
     @Override
     public int getItemCount() {
-        return items.size();
+        if(items != null) {
+            return items.size();
+        }
+        return 0;
     }
 
     /**

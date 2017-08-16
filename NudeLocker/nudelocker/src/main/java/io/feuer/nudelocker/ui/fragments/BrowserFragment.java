@@ -1,14 +1,17 @@
 package io.feuer.nudelocker.ui.fragments;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
@@ -18,6 +21,7 @@ import java.util.List;
 
 import io.feuer.jlib.ui.fragments.JFragment;
 import io.feuer.nudelocker.R;
+import io.feuer.nudelocker.bll.Browser;
 import io.feuer.nudelocker.bll.BrowserItem;
 import io.feuer.nudelocker.ui.adapters.BrowserAdapter;
 
@@ -88,7 +92,7 @@ public class BrowserFragment extends JFragment implements View.OnClickListener {
 
         lmLinear = new LinearLayoutManager(getContext());
         lmGrid = new GridLayoutManager(getContext(), GridLayoutManager.DEFAULT_SPAN_COUNT);
-        adapter = new BrowserAdapter(items); //TODO: Get the data!
+        adapter = new BrowserAdapter(); //TODO: Get the data!
 
         if(rvBrowser != null) {
             rvBrowser.setLayoutManager(lmLinear);
@@ -110,7 +114,7 @@ public class BrowserFragment extends JFragment implements View.OnClickListener {
     public void onResume() {
         super.onResume();
         if(items == null) {
-            items = new ArrayList<>(BrowserItem.getDefaultItems(getContext()));
+            items = new ArrayList<>(Browser.getDefaultItems(getContext()));
         }
     }
 
@@ -118,7 +122,26 @@ public class BrowserFragment extends JFragment implements View.OnClickListener {
     public void onClick(View view) {
         if(view != null) {
             if(view == fabCreateFolder) {
+                final EditText edtName = new EditText(getContext());
 
+                new AlertDialog.Builder(getContext())
+                        .setTitle(R.string.create_folder)
+                        .setMessage(R.string.create_folder)
+                        .setView(edtName)
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Browser.getInstance().createFolder(edtName.getText().toString());
+                            }
+                        })
+                        .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                            }
+                        })
+                        .create()
+                        .show();
             } else if(view == fabImportImage) {
 
             }
